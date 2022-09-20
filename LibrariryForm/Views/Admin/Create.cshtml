@@ -1,0 +1,143 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model User
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet"
+          href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="~/assets/css/style.css" />
+
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+          crossorigin="anonymous" />
+
+    <title>Registration Form</title>
+</head>
+<body>
+    <div class="d-flex">
+        <section class="col-6 panel flex-center-center">
+            <div class="container">
+                <div class="panel_title">
+                    <h1>AZİİ Elektron Kitab Evi</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Nobis molestiae excepturi vero dignissimos
+                        porro impedit veritatis. Voluptatibus ratione,
+                        expedita quo, natus autem, laboriosam amet ipsam
+                        accusantium sit maiores quaerat est.
+                    </p>
+                </div>
+                <div class="panel_image">
+                    <img src="~/assets/image/library.svg" alt="Library" />
+                </div>
+            </div>
+        </section>
+        <section class="col-6 form-section">
+            <div class="col-9 container bg-white">
+                <div class="forms">
+                    <div class="form login">
+                        <span class="title">Qeydiyyat formu</span>
+                        <form class="mt-4" method="post">
+                            <div class="input-field">
+                                <input asp-for="@Model.PrivateInfo" type="text"
+                                       placeholder="Adiniz qeyd edin . . ."
+                                       required="Zehmet olmasa Ad, Soyad ve Ata adnizi qeyd edin" />
+                                <i class="uil uil-user icon"></i>
+                                <div class="input-comment">
+                                    *Ad / Soyad / Ata adi
+                                </div>
+                                <span asp-validation-for="@Model.PrivateInfo" class="text-danger"></span>
+                            </div>
+
+                            <div class="input-field">
+                                <input type="text" asp-for="@Model.Adress"
+                                       placeholder="Adress'inizi qeyd edin . . ."
+                                       required=""
+                                       oninvalid="this.setCustomValidity('Zehmet olmasa Adress`inizi qeyd edin')" />
+                                <i class="uil uil-building icon"></i>
+                                <span asp-validation-for="@Model.Adress" class="text-danger"></span>
+                            </div>
+
+                            <div class="input-field">
+                                <input type="text" asp-for="@Model.Email"
+                                       placeholder="Mail'nizi qeyd edin . . ."
+                                       oninvalid="this.setCustomValidity('Zehmet olmasa Mail`inizi qeyd edin')" />
+                                <i class="uil uil-envelope icon"></i>
+                                <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                            </div>
+
+                            <div class="input-field">
+                                <input type="text" asp-for="@Model.Number"
+                                       placeholder="+994 xx xxx xx xx"
+                                       oninvalid="this.setCustomValidity('Zehmet olmasa Telefon Nomrenizi qeyd edin')" />
+                                <i class="uil uil-phone icon"></i>
+                                <span asp-validation-for="@Model.Number" class="text-danger"></span>
+                            </div>
+
+                            <div class="input-field">
+                                <input type="text" asp-for="@Model.WorkInfo"
+                                       placeholder="Neft-Qaz Muhendisi / Socar"
+                                       oninvalid="this.setCustomValidity('Zehmet olmasa Ixtisasinizi ve Islediyiniz qurumu qeyd edin')" />
+                                <i class="uil uil-constructor icon"></i>
+                                <span asp-validation-for="@Model.WorkInfo" class="text-danger"></span>
+                            </div>
+
+                            <div class="input-field">
+                                <input type="text" asp-for="@Model.BookInfo"
+                                       placeholder=""
+                                       oninvalid="this.setCustomValidity('Zehmet olmasa istediyiniz Kitab haqqinda aciqlama verin')" />
+                                <i class="uil uil-book icon"></i>
+                                <div class="input-comment">
+                                    *Kitab haqqinda melumat
+                                </div>
+                                <span asp-validation-for="@Model.BookInfo" class="text-danger"></span>
+                            </div>
+
+                            <div class="d-flex">
+                                <div class="input-field mr-2">
+                                    <input type="text" asp-for="@Model.Fin"
+                                           placeholder="9FCH6KR"
+                                           required />
+                                    <i class="uil uil-file-search-alt icon"></i>
+                                    <div class="input-comment">
+                                        *Fin kod
+                                    </div>
+                                    <span asp-validation-for="@Model.Fin" class="text-danger"></span>
+                                </div>
+
+                                <div class="input-field">
+                                    <input type="text" asp-for="@Model.SeriyaNumber"
+                                           placeholder="AA378237"
+                                           required />
+                                    <i class="uil uil-dialpad-alt icon"></i>
+                                    <div class="input-comment">
+                                        *Seriya nomresi
+                                    </div>
+                                    <span asp-validation-for="@Model.SeriyaNumber" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="input-field button">
+                                <input type="submit" value="Gonder" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
